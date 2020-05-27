@@ -3,9 +3,11 @@ import requests
 from bs4 import BeautifulSoup 
 
 class Trade(object):
-    def __init__(self, nemo, lastPrice):
+    def __init__(self, nemo, lastPrice, dateLastPrice, hourLastPrice):
         self.nemo = nemo
         self.lastPrice = lastPrice
+        self.dateLastPrice = dateLastPrice
+        self.hourLastPrice = hourLastPrice
 
 mainTrades = []
 
@@ -22,12 +24,15 @@ mainTrades = []
 
 soup = BeautifulSoup(open("./page.html"), 'html.parser')
 mainTradesNemoDiv = soup.findAll("span", {"class": "clsConstituyentes"})
+mainTradesPriceDiv = soup.findAll("span",{"data-bind":"text: price"})
+dateLastPrice = soup.find("span", {"id": "dateUltimaActu"})
+hourLastPrice = soup.find("span", {"id": "timeUltimaActu"})
 
 itemCount = 0
 for trade in mainTradesNemoDiv:
-  mainTrades.append(Trade(trade.contents[0].strip(), 1))
+  mainTrades.append(Trade(trade.contents[0].strip(), mainTradesPriceDiv[itemCount].text.strip(), dateLastPrice.text.strip(), hourLastPrice.text.strip()))
   itemCount+=1
 
 
 for trade in mainTrades:
-    print(trade.nemo)
+    print(trade.nemo + " " + trade.lastPrice + " " + trade.hourLastPrice + " " + trade.dateLastPrice)
