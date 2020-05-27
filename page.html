@@ -1,0 +1,3021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <title>
+   Indicadores de Mercado - LarrainVial
+  </title>
+  <meta content="Indicadores de Mercado" name="description">
+   <!-- CSS -->
+   <link href="http://larrainvial.finmarketslive.cl/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+   <link href="http://larrainvial.finmarketslive.cl/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+   <link href="http://larrainvial.finmarketslive.cl/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+   <link href="http://larrainvial.finmarketslive.cl/css/styles.css?up=22062016" rel="stylesheet" type="text/css"/>
+   <link href="http://larrainvial.finmarketslive.cl/css/bootstrap-datepicker.standalone.css" rel="stylesheet" type="text/css"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+   <script language="javascript" type="text/javascript">
+    var idNotation = "3969";
+		var qltFijo = "1";
+		var qlt = "RLT";
+		var global_qlt = "1";
+		var _mercado = "chile";
+   </script>
+   <!-- JQUERY OTAS -->
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/jquery-1.12.4.min.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/bootstrap.min.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/bootstrap-datepicker.min.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/locales/bootstrap-datepicker.es.min.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/bootstrap3-typeahead.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/jquery.mCustomScrollbar.concat.min.js" type="text/javascript">
+   </script>
+   <!-- AMCHART/CHART -->
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/amchart-3/amcharts.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/amchart-3/serial.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/amchart-3/amstock.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/amchart-3/plugins/tools/datePadding/datePadding.js?" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/chart/fmchart.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/chart/basic.js" type="text/javascript">
+   </script>
+   <!-- PUSH -->
+   <script src="http://push.finmarkets.cl/files/push-api/1.0.0/push.js" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    if (push)
+	push.setServerProperties({"token":null,"server":"push2.finmarkets.cl","port":80,"protocol":"http","gmt":-4,"environment":"live","mainChannel":"push"});
+   </script>
+   <script type="text/javascript">
+    function DomReady() {
+	if (push){
+		push.init();
+		setTimeout(function(){
+			location.reload();
+		}, 60 * 60 * 1000);
+	}
+}
+
+if (document.addEventListener) {
+	document.addEventListener("DOMContentLoaded", DomReady, false);
+} else if (document.attachEvent) {
+	document.attachEvent("onreadystatechange", DomReady);
+}
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/push/pushFormat.js" type="text/javascript">
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/push/topflopTmpl.js" type="text/javascript">
+   </script>
+   <!-- OTRAS -->
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/libs/moment.min.js" type="text/javascript">
+   </script>
+   <script language="javascript" type="text/javascript">
+    var rootSite = "http://larrainvial.finmarketslive.cl/www/";
+		var rootSiteImg = "http://larrainvial.finmarketslive.cl/images/";
+		var datetimeTrade = {"3969":{"name":"IPSA","open":"2020-05-27 13:30:00","close":"2020-05-27 20:00:00"},"3970":{"name":"IGPA","open":"2020-05-27 13:30:00","close":"2020-05-27 20:00:00"},"428":{"name":"COLCAP","open":"2020-05-27 14:30:00","close":"2020-05-27 20:00:00"},"20524":{"name":"SP\/BVL PERU SEL","open":"2020-05-27 13:30:00","close":"2020-05-27 20:00:00"},"700":{"name":"S&P 40 MILA","open":"2020-05-27 13:30:00","close":"2020-05-27 20:15:00"},"7690":{"name":"BOVESPA","open":"2020-05-27 13:00:00","close":"2020-05-27 19:45:00"},"123":{"name":"MERVAL","open":"2020-05-27 14:00:00","close":"2020-05-27 20:00:00"},"698":{"name":"S&P 100","open":"2020-05-27 13:30:00","close":"2020-05-27 20:00:00"},"699":{"name":"S&P 500","open":"2020-05-27 13:30:00","close":"2020-05-27 20:00:00"},"710":{"name":"FTSE 100","open":"2020-05-27 07:00:00","close":"2020-05-27 18:00:00"},"711":{"name":"DAX","open":"2020-05-28 07:00:00","close":"2020-05-28 15:30:00"},"707":{"name":"IBEX 35","open":"2020-05-28 05:00:00","close":"2020-05-28 16:00:00"},"705":{"name":"NIKKEI 225","open":"2020-05-28 00:00:00","close":"2020-05-28 06:00:00"},"706":{"name":"HANG SENG","open":"2020-05-28 18:00:00","close":"2020-05-28 02:30:00"},"33346":{"name":"CSI 300","open":"2020-05-28 01:30:00","close":"2020-05-28 07:00:00"}};
+		$(document).ready(function() {
+			//Ejecuta verificación bolsas (open, close)
+			checkTrading();
+			window.setInterval(function(a){
+				checkTrading();
+			}, 10000);
+		});
+   </script>
+   <script language="javascript" src="http://larrainvial.finmarketslive.cl/js/functions.js?up=809028722" type="text/javascript">
+   </script>
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-80397101-1', 'auto');
+	ga('send', 'pageview');
+   </script>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css"/>
+  </meta>
+ </head>
+ <body>
+  <div id="wrapper">
+   <!--Inicio Header-->
+   <header>
+    <nav class="main-menu">
+     <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+       <button aria-expanded="false" class="navbar-toggle collapsed" data-activates="slide-out" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <i class="material-icons">
+         menu
+        </i>
+       </button>
+       <a class="brand" href="http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile">
+        <img src="http://larrainvial.finmarketslive.cl/images/logo.svg"/>
+        <span>
+         Indicadores de mercado
+        </span>
+       </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+         <a href="http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile">
+          Chile
+         </a>
+        </li>
+        <li class="">
+         <a href="http://larrainvial.finmarketslive.cl/www/index.html?mercado=peru">
+          Perú
+         </a>
+        </li>
+        <li class="">
+         <a href="http://larrainvial.finmarketslive.cl/www/index.html?mercado=colombia">
+          Colombia
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+     </div>
+    </nav>
+   </header>
+   <!--Fin Header-->
+   <!--Inicio Main-->
+   <main>
+    <div class="container-fluid">
+     <section>
+      <div class="row flex">
+       <div class="col-xs-12 col-md-3 box-1">
+        <table>
+         <thead>
+          <tr>
+           <th>
+            Índices
+           </th>
+           <th>
+            Puntos
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="clsIndex_3969" id="Edom:1,i:3969,q:1,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_3969_1">
+             IPSA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             3.727,17
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,18
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_3970" id="Edom:2,i:3970,q:1,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_3970_1">
+             IGPA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             18.781,37
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,19
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_428" id="Edom:3,i:428,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_428_2">
+             COLCAP
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.073,19
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,04
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_20524" id="Edom:4,i:20524,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_20524_2">
+             SP/BVL PERU SEL
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             410,12
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,41
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_700" id="Edom:5,i:700,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_700_2">
+             S&amp;P 40 MILA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             390,44
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,60
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_7690" id="Edom:6,i:7690,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_7690_2">
+             BOVESPA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             86.739,00
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,49
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_123" id="Edom:7,i:123,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_123_2">
+             MERVAL
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             39.792,27
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,09
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_698" id="Edom:8,i:698,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_698_2">
+             S&amp;P 100
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.372,37
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,17
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_699" id="Edom:9,i:699,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_699_2">
+             S&amp;P 500
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             3.001,77
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,33
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_710" id="Edom:10,i:710,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_710_2">
+             FTSE 100
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             6.144,25
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,26
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_711" id="Edom:11,i:711,q:2,c:pushNormalFilter">
+           <td>
+            <span class="instrument" id="name_711_2">
+             DAX
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             11.657,60
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,33
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_707" id="end_707">
+           <td>
+            <span class="instrument" id="name_707_1">
+             IBEX 35
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             7.174,50
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +2,44
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_705" id="end_705">
+           <td>
+            <span class="instrument" id="name_705_1">
+             NIKKEI 225
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             21.419,23
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,70
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_706" id="end_706">
+           <td>
+            <span class="instrument" id="name_706_1">
+             HANG SENG
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             23.301,36
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,36
+            </span>
+           </td>
+          </tr>
+          <tr class="clsIndex_33346" id="end_33346">
+           <td>
+            <span class="instrument" id="name_33346_1">
+             CSI 300
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             3.845,61
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,70
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-xs-12 col-md-9 left box-2">
+        <div class="stock-info" id="blkHeadChart">
+         <!-- Head Chart -->
+         <div id="Edom:12,i:3969,q:1,c:pushFilter">
+          <!-- blkHeadChart -->
+          <div class="stock-header">
+           <div class="container-fluid">
+            <div class="row flex">
+             <div class="col-xs-12 col-md-4 box-2">
+              <div class="search-bar">
+               <input autocomplete="off" class="typeahead" id="buscador" placeholder="Buscar.." type="text"/>
+               <div class="button" id="btnBuscar">
+                <img src="http://larrainvial.finmarketslive.cl/images/lupa.svg"/>
+               </div>
+               <div class="button" id="btnComparar">
+                <img src="http://larrainvial.finmarketslive.cl/images/compare.svg"/>
+               </div>
+               <input id="instrumento_id" type="hidden">
+                <input id="instrumento_nombre" type="hidden"/>
+                <input id="instrumento_simbolo" type="hidden"/>
+                <input id="instrumento_calidad" type="hidden"/>
+               </input>
+              </div>
+              <script charset="utf-8" type="text/javascript">
+               var activoInstrumento = idNotation;
+$(document).ready(function(eb){
+	$('#buscador').click(function(){ $(this).val(''); });
+
+	/**
+	 * Buscador de Instrumentos
+	 *
+	 */
+	$('#buscador').typeahead({
+		items: 'all',
+		minLength: 2,
+		limit: 10,
+		pathImg: rootSiteImg + 'flags/',
+		source: function (query, process) {
+			$.ajax({
+				url: rootSite + "buscador.html",
+				type: 'GET',
+				dataType: 'JSON',
+				data: {SEARCH_VALUE: query, MERCADO: _mercado},
+				success: function(data) {
+					process(data);
+				}
+			});
+		},
+		afterSelect: function(item) {
+			$("#instrumento_id").val(item.id);
+			$("#instrumento_nombre").val(item.name);
+			$('#instrumento_simbolo').val(item.symbol);
+			$('#instrumento_calidad').val(item.qlt);
+			return true;
+		}
+	});
+
+	/**
+	 * Botón Buscar
+	 *
+	 */
+	$('#btnBuscar').click(function(){
+		if( $('#instrumento_id').val() != '' ){
+			var tmpId = $('#instrumento_id').val();
+			var tmpQlt = $('#instrumento_calidad').val();
+			activoInstrumento = tmpId;
+			changeChart(parseInt(tmpId), parseInt(tmpQlt));
+		}
+	});
+
+	/**
+	 * Comparar 2 graficos
+	 *
+	 */
+	$('#btnComparar').click(function(){
+		if( $('#instrumento_id').val() != '' && activoInstrumento != $('#instrumento_id').val() ) {
+			var tmpId = $('#instrumento_id').val();
+			var tmpQlt = $('#instrumento_calidad').val();
+			compareChart(tmpId, tmpQlt);
+		}
+	});
+});
+              </script>
+             </div>
+             <div class="col-xs-12 col-md-8 box-1">
+              <h1>
+               IPSA
+              </h1>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="stock-detail">
+           <div class="container-fluid">
+            <div class="row">
+             <div class="col-md-8">
+              <div class="var neg-back-var arrow-container">
+               <div class="arrow">
+                <img src="http://larrainvial.finmarketslive.cl/images/arrow.svg"/>
+               </div>
+              </div>
+              <div class="info">
+               <div class="info-var">
+                <label>
+                 Último
+                </label>
+                <span class="value last" data-bind="text: price">
+                 3.727,17
+                </span>
+               </div>
+               <div class="info-var">
+                <label>
+                 Var. Pts.
+                </label>
+                <span class="value neg-var var" data-bind="text: performance, style: {color: color, background: background}">
+                 -6,61
+                </span>
+               </div>
+               <div class="info-var">
+                <label>
+                 Var. %
+                </label>
+                <span class="value neg-var var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                 -0,18
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="col-md-4">
+              <div class="chart-menu">
+               <div class="chart-menu-container" id="chart-menu-container">
+                <ul>
+                 <li>
+                  <span class="periodosChart" id="1D">
+                   1 D
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li>
+                  <span class="periodosChart" id="5D">
+                   5 D
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li>
+                  <span class="periodosChart" id="1M">
+                   1 M
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li>
+                  <span class="periodosChart" id="3M">
+                   3 M
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li>
+                  <span class="periodosChart active" id="1Y">
+                   1 A
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li>
+                  <span class="periodosChart" id="3Y">
+                   3 A
+                  </span>
+                 </li>
+                 <!--
+-->
+                 <li class="more-less">
+                  <span id="more">
+                   <i aria-hidden="true" class="fa fa-plus">
+                   </i>
+                  </span>
+                 </li>
+                </ul>
+                <!-- Selector de fechas -->
+                <input id="chartFechaHoy" type="hidden" value="27/05/2020"/>
+                <div class="date-pickers-group">
+                 <div class="menu-item">
+                  <div class="input-group date" id="cDesde">
+                   <input class="" id="chartFechaIni" placeholder="Desde" readonly="" type="text"/>
+                   <span class="input-group-addon">
+                    <i class="fa fa-calendar">
+                    </i>
+                    <!-- <span class="glyphicon">
+                                                <i class="fa fa-calendar"></i>
+                                            </span> -->
+                   </span>
+                  </div>
+                 </div>
+                 <div class="menu-item">
+                  <div class="input-group date" id="cHasta">
+                   <input class="" id="chartFechaFin" placeholder="Hasta" readonly="" type="text"/>
+                   <span class="input-group-addon">
+                    <i class="fa fa-calendar">
+                    </i>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- Selector de fechas -->
+                 <div class="more-less">
+                  <span id="less">
+                   <i aria-hidden="true" class="fa fa-minus">
+                   </i>
+                  </span>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="stock-chart">
+           <div class="container-fluid" style="padding-left: 51px;">
+            <div style="min-height: 24px;">
+            </div>
+            <div class="row date">
+             <div class="col-md-7">
+              <!--compare-->
+              <div class="blkCompare" style="display:none;">
+               <input id="compareId0" name="Comparar.dato0" type="hidden" value="3969">
+                <input id="compareId1" name="Comparar.dato1" type="hidden" value="">
+                 <table class="" id="tblComparar">
+                  <tr>
+                   <td valign="middle">
+                    <i class="fa fa-times-circle fa-lg left removeCompare" id="removeCompare_0" role="button" title="Quitar">
+                    </i>
+                    <span id="compareNameBase_1">
+                     IPSA
+                    </span>
+                   </td>
+                   <td valign="middle">
+                    <i class="fa fa-times-circle fa-lg left removeCompare" id="removeCompare_1" role="button" title="Quitar">
+                    </i>
+                    <span id="compareTextName_1">
+                    </span>
+                   </td>
+                  </tr>
+                 </table>
+                </input>
+               </input>
+              </div>
+              <!--compare-->
+             </div>
+             <div class="col-md-5 text-right">
+              <b>
+               Última actualización:
+              </b>
+              <span id="dateUltimaActu">
+               27/05/2020
+              </span>
+              <span id="timeUltimaActu">
+               12:27:04
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <script charset="utf-8" type="text/javascript">
+          var _iDefaultInstrument = "3969";
+var _conConstituyentes = "";
+var _quality = "1";
+var _mercado = "chile";
+$(document).ready(function(ens){
+
+    // if(_conConstituyentes !== '') {
+    //     push.unsubscribeAll(document.getElementById('blkConstituyentes'));
+    //     $.ajax({
+    //         url: rootSite + 'constituyentes.html',
+    //         type: "GET",
+    //         data: { ID_NOTATION: _iDefaultInstrument, QUALITY: _quality, MARKET: _mercado, NAME: "IPSA"  },
+    //         dataType: "html",
+    //         beforeSend: function(a){ $('#loadingConstituyentes').show(); },
+    //         success: function(dataC){
+    //             if(dataC != ''){
+    //                 $('#blkConstituyentes').html(dataC);
+    //                 push.subscribeObj(document.getElementById('blkConstituyentes'));
+    //                 $('.clsConstituyentes').click(function(e){
+    //                     if(this.id == '') return false;
+    //                     var tmp = this.id.split('_');
+    //                     changeChart(parseInt(tmp[1]),tmp[2]);
+    //                 });
+    //             }
+    //             $('#loadingConstituyentes').hide();
+    //         },
+    //         error: function(p){ $('#loadingConstituyentes').hide(); }
+    //     });
+    // }
+
+    /**
+     * Definición fechas gráfico
+     *
+     */
+     $('#cDesde, #cHasta').datepicker({
+        format: "dd/mm/yyyy",
+        language: "es",
+        autoclose: true,
+        endDate: '0'
+    });
+
+    /**
+     * Periodos del gráfico
+     *
+     */
+    $('.periodosChart').click(function(e){
+        $('.periodosChart').removeClass('active');
+        var TIME_SPAN = this.id;
+        $(this).addClass('active');
+        basic_chart.zoom(TIME_SPAN);
+    });
+
+    /**
+     * Muestra/Oculta fecha para rango fecha grafico
+     *
+     */
+    $('#more').click(function(){
+        $('#chart-menu-container').css('left', '-100%');
+    });
+    $('#less').click(function(){
+        $('#chart-menu-container').css('left', '0');
+    });
+
+    /**
+     * Selector de fechas gráfico
+     *
+     */
+    $("#chartFechaFin, #chartFechaIni").change(function(){
+        if( $("#chartFechaFin").val() != '' && $("#chartFechaIni").val() != '' )
+            customZoom();
+    });
+
+    /**
+     * Remover el comparador
+     *
+     */
+    $('.removeCompare').click(function(){
+        basic_chart.removeCompare(this.id);
+    });
+});
+         </script>
+        </div>
+        <!-- Grafico -->
+        <div class="stock-info">
+         <div id="loadingChart">
+          <i class="fa fa-spinner fa-pulse fa-3x fa-fw">
+          </i>
+         </div>
+         <div id="idChart">
+         </div>
+        </div>
+        <!-- Grafico -->
+       </div>
+      </div>
+      <!-- row flex -->
+     </section>
+    </div>
+    <div class="container-fluid">
+     <section>
+      <div class="row flex stock-flex">
+       <div class="box-1 col-md-3" id="blkConstituyentes">
+        <div class="scroll-table scroll-thead">
+         <div class="tr">
+          <div class="th">
+           Principales Acciones *
+          </div>
+          <div class="th">
+           Precio
+          </div>
+          <div class="th">
+           Var. %
+          </div>
+         </div>
+        </div>
+        <div class="scroll-frame" id="constituyentes">
+         <div class="mCustomScrollbar" data-mcs-theme="dark">
+          <div class="scroll-table scroll-tbody">
+           <!-- <div class="tr" id="Edom:13,i:996,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:14,i:996,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_996_1" title="AES GENER S.A.">
+              AESGENER
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              114,50
+             </span>
+            </div>
+            <div class="td">
+             <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              0,00
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:15,i:3993,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:16,i:3993,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3993_1" title="AGUAS ANDINAS S.A., SERIE A">
+              AGUAS-A
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              251,20
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,48
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:17,i:4020,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:18,i:4020,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4020_1" title="EMBOTELLADORA ANDINA S.A. SERIE B">
+              ANDINA-B
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.915,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,26
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:19,i:4038,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:20,i:4038,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4038_1" title="BANCO DE CREDITO E INVERSIONES">
+              BCI
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              27.200,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,22
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:21,i:4009,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:22,i:4009,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4009_1" title="BANCO SANTANDER-CHILE">
+              BSANTANDER
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              33,23
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,15
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:23,i:3989,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:24,i:3989,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3989_1" title="CAP S.A.">
+              CAP
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              4.800,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -4,00
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:25,i:4017,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:26,i:4017,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4017_1" title="COMPANIA CERVECERIAS UNIDAS S.A.">
+              CCU
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              5.702,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +2,81
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:27,i:3998,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:28,i:3998,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3998_1" title="CENCOSUD S.A.">
+              CENCOSUD
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              942,85
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -3,00
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:29,i:4008,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:30,i:4008,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4008_1" title="BANCO DE CHILE">
+              CHILE
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              69,15
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +1,30
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:31,i:4046,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:32,i:4046,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4046_1" title="EMPRESAS CMPC S.A.">
+              CMPC
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.707,10
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -1,61
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:33,i:4021,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:34,i:4021,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4021_1" title="COLBUN S.A.">
+              COLBUN
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              125,11
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,09
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:35,i:4045,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:36,i:4045,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4045_1" title="VINA CONCHA Y TORO S.A.">
+              CONCHATORO
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.180,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,83
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:37,i:3997,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:38,i:3997,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3997_1" title="EMPRESAS COPEC S.A.">
+              COPEC
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              4.900,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,39
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:39,i:4010,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:40,i:4010,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4010_1" title="E.CL S.A.">
+              ECL
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.029,90
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +1,97
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:41,i:50741,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:42,i:50741,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_50741_1" title="ENELAM">
+              ENELAM
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              119,70
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +1,44
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:43,i:50582,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:44,i:50582,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_50582_1" title="ENELCHILE">
+              ENELCHILE
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              61,20
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,34
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:45,i:50579,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:46,i:50579,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_50579_1" title="ENELGXCH">
+              ENELGXCH
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              295,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +1,61
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:47,i:4002,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:48,i:4002,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4002_1" title="EMP. NACIONAL DE TELECOMUNICACIONES S.A.">
+              ENTEL
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              5.000,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -1,96
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:49,i:3990,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:50,i:3990,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3990_1" title="S.A.C.I. FALABELLA">
+              FALABELLA
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.990,20
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -2,92
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:51,i:4064,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:52,i:4064,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4064_1" title="FORUS">
+              FORUS
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              890,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              0,00
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:53,i:4003,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:54,i:4003,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4003_1" title="HITES">
+              HITES
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              125,19
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,83
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:55,i:4032,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:56,i:4032,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4032_1" title="INVERSIONES AGUAS METROPOLITANAS S.A.">
+              IAM
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              654,88
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,75
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:57,i:3999,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:58,i:3999,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_3999_1" title="INVERSIONES LA CONSTRUCCION S.A.">
+              ILC
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              5.000,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -1,68
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:59,i:33565,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:60,i:33565,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_33565_1" title="ITAUCORP">
+              ITAUCORP
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1,91
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -1,44
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:61,i:52141,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:62,i:52141,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_52141_1" title="LATAM AIRLINES GROUP S.A.">
+              LTM
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.010,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -21,09
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:63,i:57347,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:64,i:57347,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_57347_1" title="MALLPLAZA">
+              MALLPLAZA
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.260,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -2,78
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:65,i:4031,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:66,i:4031,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4031_1" title="PARQUE ARAUCO S.A.">
+              PARAUCO
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              1.422,90
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -1,73
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:67,i:4025,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:68,i:4025,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4025_1" title="RIPLEY CORP S.A.">
+              RIPLEY
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              223,41
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,25
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:69,i:4019,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:70,i:4019,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4019_1" title="SALFACORP S.A.">
+              SALFACORP
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              365,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,12
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:71,i:4043,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:72,i:4043,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4043_1" title="GRUPO SECURITY S.A.">
+              SECURITY
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              151,92
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +0,31
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:73,i:51638,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:74,i:51638,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_51638_1" title="SMU">
+              SMU
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              138,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,72
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:75,i:4028,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:76,i:4028,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4028_1" title="SONDA S.A.">
+              SONDA
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              477,50
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -0,58
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:77,i:4000,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:78,i:4000,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4000_1" title="SOC QUIMICA MINERA DE CHILE S.A. SERIE B">
+              SQM-B
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              20.429,00
+             </span>
+            </div>
+            <div class="td">
+             <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              +3,62
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:79,i:52748,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:80,i:52748,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_52748_1" title="TRICOT">
+              TRICOT
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              449,97
+             </span>
+            </div>
+            <div class="td">
+             <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              0,00
+             </span>
+            </div>
+           </div>
+           <!-- <div class="tr" id="Edom:81,i:4015,q:1,c:pushNormalFilter"> -->
+           <div class="tr" id="Edom:82,i:4015,q:2,c:pushNormalFilter">
+            <div class="td">
+             <span class="instrument clsConstituyentes" id="Cname_4015_1" title="COMPANIA SUD AMERICANA DE VAPORES S.A.">
+              VAPORES
+             </span>
+            </div>
+            <div class="td">
+             <span data-bind="text: price">
+              19,35
+             </span>
+            </div>
+            <div class="td">
+             <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+              -3,78
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <script charset="utf-8" type="text/javascript">
+         var _mercado = "chile";
+var _heightScroll = 171;
+$(document).ready(function(eqq){
+
+    /**
+     * Scroll Constituyentes listado
+     *
+     */
+    if(_mercado == 'peru') _heightScroll = 465;
+    else if(_mercado == 'colombia') _heightScroll = 357;
+    $("#constituyentes").mCustomScrollbar({
+        setHeight: _heightScroll,
+        theme: "minimal-dark"
+    });
+});
+        </script>
+       </div>
+       <div class="col-md-3 box-2">
+        <table id="Edom:83,i:top-10-2,q:1,c:pushFilter">
+         <thead>
+          <tr>
+           <th>
+            Mayores Alzas
+           </th>
+           <th>
+            Precio
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody id="tbodyTop">
+          <tr>
+           <td>
+            <span class="instrument" id="name_4103_1">
+             C
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             51,16
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +24,14
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4236_1">
+             JPM
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             100,60
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +13,67
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_55866_1">
+             BKNG
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.735,60
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +8,54
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4079_1">
+             ORO BLANCO
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,85
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +7,18
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4069_1">
+             NORTEGRAN
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,90
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +6,50
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4000_1">
+             SQM-B
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             20.429,00
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +3,62
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4207_1">
+             INGEVEC
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             69,91
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +2,90
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4017_1">
+             CCU
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             5.702,00
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +2,81
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4074_1">
+             CAMANCHACA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             55,00
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +2,61
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4026_1">
+             CRISTALES
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             4.133,90
+            </span>
+           </td>
+           <td class="st_Top">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +2,58
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-md-3 box-2">
+        <table id="Edom:84,i:flop-10-2,q:1,c:pushFilter">
+         <thead>
+          <tr>
+           <th>
+            Mayores Bajas
+           </th>
+           <th>
+            Precio
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody id="tbodyFlop">
+          <tr>
+           <td>
+            <span class="instrument" id="name_52141_1">
+             LTM
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.010,00
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -21,09
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4105_1">
+             CAROZZI
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.550,00
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -6,06
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3988_1">
+             NUEVAPOLAR
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             7,60
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -4,90
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3989_1">
+             CAP
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             4.800,00
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -4,00
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4015_1">
+             VAPORES
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             19,35
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,78
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4299_1">
+             WMT
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             121,12
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,38
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4061_1">
+             SOQUICOM
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             149,20
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,38
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3998_1">
+             CENCOSUD
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             942,85
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,00
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3990_1">
+             FALABELLA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.990,20
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -2,92
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_8003_1">
+             FB
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             223,13
+            </span>
+           </td>
+           <td class="st_Flop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -2,85
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-md-3 box-2">
+        <table id="Edom:85,i:topflop-10-2,q:1,c:pushFilter">
+         <thead>
+          <tr>
+           <th>
+            Más transadas
+           </th>
+           <th>
+            MM ($)
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody id="tbodyTopflop">
+          <tr>
+           <td>
+            <span class="instrument" id="name_52141_1">
+             LTM
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             23.876,12
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -21,09
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_50741_1">
+             ENELAM
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             12.843,10
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,44
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4000_1">
+             SQM-B
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             4.536,01
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +3,62
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3990_1">
+             FALABELLA
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             4.524,07
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -2,92
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4002_1">
+             ENTEL
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             4.068,05
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -1,96
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4009_1">
+             BSANTANDER
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             2.281,38
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,15
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3993_1">
+             AGUAS-A
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             2.244,22
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,48
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_3989_1">
+             CAP
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             1.749,94
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -4,00
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4008_1">
+             CHILE
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             1.498,55
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,30
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument" id="name_4015_1">
+             VAPORES
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: total_money">
+             1.345,51
+            </span>
+           </td>
+           <td class="st_Topflop">
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -3,78
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div id="loadingConstituyentes">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw">
+        </i>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div class="row">
+       <div class="col-md-3">
+        <section class="row-resp">
+         <div class="row">
+          <div class="col-md-12">
+           <table>
+            <thead>
+             <tr>
+              <th>
+               Indicadores
+              </th>
+              <th>
+               Valor
+              </th>
+              <th>
+               Var.%
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr id="Edom:86,i:210,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_210_1">
+                UF
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                28.716,52
+               </span>
+              </td>
+              <td>
+               <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                0,00
+               </span>
+              </td>
+             </tr>
+             <tr id="Edom:87,i:772,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_772_1">
+                UTM
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                50.372,00
+               </span>
+              </td>
+              <td>
+               <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                +0,30
+               </span>
+              </td>
+             </tr>
+             <tr id="Edom:88,i:231,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_231_1">
+                Dólar Observado
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                802,10
+               </span>
+              </td>
+              <td>
+               <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                -0,20
+               </span>
+              </td>
+             </tr>
+             <tr id="Edom:89,i:13994,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_13994_1">
+                IPC Abril
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                105,01
+               </span>
+              </td>
+              <td>
+               <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                +0,00
+               </span>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </div>
+         </div>
+         <div class="row">
+          <div class="col-md-12">
+           <table>
+            <thead>
+             <tr>
+              <th>
+               Bonos
+              </th>
+              <th>
+               Valor
+              </th>
+              <th>
+               Var.%
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr id="Edom:90,i:67,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_67_1">
+                US TREASURY 2Y
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                0,18
+               </span>
+              </td>
+              <td>
+               <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                +5,88
+               </span>
+              </td>
+             </tr>
+             <tr id="Edom:91,i:748,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_748_1">
+                US TREASURY 5Y
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                0,35
+               </span>
+              </td>
+              <td>
+               <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                +2,94
+               </span>
+              </td>
+             </tr>
+             <tr id="Edom:92,i:746,q:1,c:pushNormalFilter">
+              <td>
+               <span class="instrument" id="name_746_1">
+                US TREASURY 10Y
+               </span>
+              </td>
+              <td>
+               <span data-bind="text: price">
+                0,69
+               </span>
+              </td>
+              <td>
+               <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+                +4,55
+               </span>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </div>
+         </div>
+        </section>
+       </div>
+       <div class="col-md-3">
+        <table>
+         <thead>
+          <tr>
+           <th>
+            Commodities
+           </th>
+           <th>
+            Valor (USD)
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr id="Edom:93,i:393,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_393_1">
+             COBRE A CASH
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             2,4104
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,23
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:94,i:982,q:2,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_982_2">
+             PETRÓLEO WTI
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             33,4000
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -2,77
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:95,i:980,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_980_1">
+             ORO OZ.
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.710,81
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -0,93
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:96,i:981,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_981_1">
+             PLATA 5000
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             17,27
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,67
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:97,i:213,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_213_1">
+             CELULOSA NBSK
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.205,04
+            </span>
+           </td>
+           <td>
+            <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             0,00
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:98,i:214,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_214_1">
+             HARINA PESCADO
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1.520,00
+            </span>
+           </td>
+           <td>
+            <span class="var no-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             0,00
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:99,i:740,q:1,c:pushFilterCommodities">
+           <td>
+            <span class="instrument" id="name_740_1">
+             GAS NATURAL
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,9140
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -1,03
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-md-3">
+        <table>
+         <thead>
+          <tr>
+           <th>
+            Renta Fija
+           </th>
+           <th>
+            Tasa
+           </th>
+           <th>
+            Var.
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr id="Edom:100,i:76,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_76_1">
+             BCU 5 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             -1,40
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,02
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:101,i:78,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_78_1">
+             BCU 10 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             -0,44
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,16
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:102,i:79,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_79_1">
+             BCU 20 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             0,10
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance, style: {color: color, background: background}">
+             +0,04
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:103,i:71,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_71_1">
+             BCP 2 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             0,49
+            </span>
+           </td>
+           <td>
+            <span class="var no-var" data-bind="text: performance, style: {color: color, background: background}">
+             0,00
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:104,i:72,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_72_1">
+             BCP 5 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,41
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,01
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:105,i:74,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_74_1">
+             BCP 10 AÑOS
+             <span style="font-size:8px;">
+              (Delay 48 hrs.)
+             </span>
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             2,02
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,16
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:106,i:62035,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_62035_1">
+             DEP $ 3 MES
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             0,25
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,04
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:107,i:62041,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_62041_1">
+             DEP $ 1 AÑO
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             0,72
+            </span>
+           </td>
+           <td>
+            <span class="var no-var" data-bind="text: performance, style: {color: color, background: background}">
+             0,00
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:108,i:62044,q:1,c:pushNormalFilter">
+           <td style="width:56%">
+            <span class="instrument" id="name_62044_1">
+             DEP UF 1 AÑO
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             -0,41
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance, style: {color: color, background: background}">
+             -0,06
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-md-3">
+        <table class="monedas">
+         <thead>
+          <tr>
+           <th>
+            Monedas
+           </th>
+           <th>
+            Valor
+           </th>
+           <th>
+            Var.%
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr id="Edom:109,i:2,q:2,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_2_2">
+             DÓLAR (USD/CLP)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             819,0000
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +1,45
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:110,i:28,q:1,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_28_1">
+             EURO (EUR/USD)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,0974
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,74
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:111,i:36,q:2,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_36_2">
+             REAL (USD/BRL)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             5,2919
+            </span>
+           </td>
+           <td>
+            <span class="var neg-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             -1,21
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:112,i:25,q:2,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_25_2">
+             PESO MEX. (USD/MXN)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             22,3735
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,58
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:113,i:978,q:1,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_978_1">
+             DÓLAR AUS. (AUD/USD)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             0,6594
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,74
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:114,i:31,q:1,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_31_1">
+             YEN (USD/JPY)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             107,7435
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,03
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:115,i:27,q:1,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_27_1">
+             LIBRA (GBP/USD)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             1,2235
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,40
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:116,i:90,q:2,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_90_2">
+             PESO COL. (USD/COP)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             3.737,39
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,20
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:117,i:95,q:2,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_95_2">
+             SOL PER. (USD/PEN)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             3,4510
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,74
+            </span>
+           </td>
+          </tr>
+          <tr id="Edom:118,i:995,q:1,c:pushFilterCurrencies">
+           <td>
+            <span class="instrument" id="name_995_1">
+             PESO ARG. (USD/ARG)
+            </span>
+           </td>
+           <td>
+            <span data-bind="text: price">
+             68,3653
+            </span>
+           </td>
+           <td>
+            <span class="var pos-var" data-bind="text: performance_pct, style: {color: color, background: background}">
+             +0,15
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div class="row">
+       <div class="col-md-6">
+        <table>
+         <thead>
+          <tr>
+           <th>
+            Indicadores APV
+           </th>
+           <th>
+            Valor ($)
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            <span class="instrument">
+             TOPE APV MENSUAL - 50 UF
+            </span>
+           </td>
+           <td>
+            <span>
+             1.434.537
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument">
+             TOPE APV ANUAL - 600 UF
+            </span>
+           </td>
+           <td>
+            <span>
+             17.214.438
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument">
+             TOPE ANUAL DEP. CON - 900 UF
+            </span>
+           </td>
+           <td>
+            <span>
+             25.821.657
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument">
+             REN. TOPE IMP. AFILIADO AFP: 80.2 UF
+            </span>
+           </td>
+           <td>
+            <span>
+             2.300.997
+            </span>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <span class="instrument">
+             REN. TOPE IMP. SEG. CESANTÍA: 120.3 UF
+            </span>
+           </td>
+           <td>
+            <span>
+             3.451.495
+            </span>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="col-md-6">
+        <h2>
+         Noticias:
+        </h2>
+        <a class="link" href="http://www.df.cl/noticias/empresas/multinacionales/multinacionales-toman-medidas-por-covid-19-parte-xi-renault-y-nissan/2020-05-25/085103.html" target="_blank">
+         <i aria-hidden="true" class="fa fa-caret-right">
+         </i>
+         Multinacionales toman medidas por Covid-19 (Parte XI): Renault y Nissan desechan alianza impulsada por Ghosn para reducir costos
+        </a>
+        <!--
+    <div id="modalNoticias0" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Multinacionales toman medidas por Covid-19 (Parte XI): Renault y Nissan desechan alianza impulsada por Ghosn para reducir costos</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="not">
+                                             </p>
+                                            <p class="not text-right">
+                            <a class="link" href="http://www.df.cl/noticias/empresas/multinacionales/multinacionales-toman-medidas-por-covid-19-parte-xi-renault-y-nissan/2020-05-25/085103.html" target="_blank">ver m&aacute;s..</a>&nbsp;&nbsp;
+                        </p>
+                                        <p>
+                        27-05-2020 11:00&nbsp;-&nbsp;Diario Financiero                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cerrar" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+        <a class="link" href="http://www.df.cl/noticias/empresas/telecom-tecnologia/ministerio-de-transportes-destaca-en-su-cuenta-anual-el-despliegue-de/2020-05-27/120022.html" target="_blank">
+         <i aria-hidden="true" class="fa fa-caret-right">
+         </i>
+         Ministerio de Transportes destaca en su cuenta anual el despliegue de buses RED y avances en conectividad
+        </a>
+        <!--
+    <div id="modalNoticias1" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Ministerio de Transportes destaca en su cuenta anual el despliegue de buses RED y avances en conectividad</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="not">
+                        En la instancia, la ministra Hutt subrayó la importancia del despliegue de fibra óptica en los proyectos FON y FOA, que contribuirán a llevar conectividad a todos los rincones de Chile.                    </p>
+                                            <p class="not text-right">
+                            <a class="link" href="http://www.df.cl/noticias/empresas/telecom-tecnologia/ministerio-de-transportes-destaca-en-su-cuenta-anual-el-despliegue-de/2020-05-27/120022.html" target="_blank">ver m&aacute;s..</a>&nbsp;&nbsp;
+                        </p>
+                                        <p>
+                        27-05-2020 10:54&nbsp;-&nbsp;Diario Financiero                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cerrar" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+        <a class="link" href="http://www.df.cl/noticias/mercados/bolsa-monedas/pese-a-optimismo-en-europa-alentado-por-los-planes-de-recuperacion-wall/2020-05-27/081406.html" target="_blank">
+         <i aria-hidden="true" class="fa fa-caret-right">
+         </i>
+         Pese a optimismo en Europa alentado por los planes de recuperación, Wall Street se desmarca y opera de forma mixta
+        </a>
+        <!--
+    <div id="modalNoticias2" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Pese a optimismo en Europa alentado por los planes de recuperación, Wall Street se desmarca y opera de forma mixta</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="not">
+                        Mientras el Dow Jones avanza 0,83%, el Nasdaq cae 1,29%.                    </p>
+                                            <p class="not text-right">
+                            <a class="link" href="http://www.df.cl/noticias/mercados/bolsa-monedas/pese-a-optimismo-en-europa-alentado-por-los-planes-de-recuperacion-wall/2020-05-27/081406.html" target="_blank">ver m&aacute;s..</a>&nbsp;&nbsp;
+                        </p>
+                                        <p>
+                        27-05-2020 10:40&nbsp;-&nbsp;Diario Financiero                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cerrar" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+       </div>
+      </div>
+     </section>
+    </div>
+   </main>
+   <!--Fin Main-->
+   <footer>
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-xs-12">
+       <p>
+        <span style="font-weight: bold;">
+         IMPORTANTE:
+        </span>
+        Algunos indicadores cuentan con desfase de 15 minutos.
+        <span style="font-weight: bold;">
+         IBEX 35, NIKKEI 225, HANGSENG y CSI 300
+        </span>
+        con información al último cierre de sus respectivos mercados. Información desplegada de carácter referencial. Valores indicados en monedas locales, Información mantiene valores de cierre hasta sus respectivas aperturas. En Mercado Chileno, información de variaciones, más transadas, índices y sectores es en tiempo real.
+        <a data-toggle="modal" href="#modalTerminos">
+         Términos de uso S&amp;P
+        </a>
+        Desarrollado utilizando la tecnología de
+        <a href="http://www.finmarkets.cl" target="_blank">
+         Finmarkets SPA
+        </a>
+        Fuente: Finmarkets SPA, Bolsa de Comercio de Santiago.Todos los Derechos Reservados © Copyright 2016 LarrainVial SpA.
+       </p>
+       <p>
+       </p>
+       <p>
+        * Esta selección de acciones no representa la composición de ningún índice bursátil.
+       </p>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!-- wrapper -->
+  <!-- Modal Términos -->
+  <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalTerminos" role="dialog" tabindex="-1">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLabel">
+       Términos de uso S&amp;P
+      </h2>
+      <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+       <span aria-hidden="true">
+        ×
+       </span>
+      </button>
+     </div>
+     <div "="" class="modal-body text-justify">
+      Los clientes acuerdan no archivar, reproducir o distribuir los valores de los índices a ninguna tercera persona, por ningún propósito, en ningún formato ni por ningún medio, incluyendo vía internet, intranet u otro tipo de red. El cliente reconoce que S&amp;P, sus afiliados o sus licenciantes son propietarios de los índices y de los valores de los índices y todos los derechos de propiedad intelectual en ellos, incluyendo sin limitación, cualquier patente, secreto comercial, derechos de autor y derechos de marca.
+      <br/>
+      <br/>
+      S&amp;P, sus afiliados o y sus licenciantes niegan cualquiera o todas las garantías y modelos, expresas o implícitas, incluyendo cualquier garantía de comercialización para un propósito particular o uso con respecto a los valores de los índices, incluyendo toda información o dato contenido o los resultados obtenidos por su uso o por el desempeño. S&amp;P, sus afiliados  y sus licenciantes tampoco garantizan la idoneidad, precisión, oportunidad o completud de los valores de los índices o cualquiera de sus componentes.
+      <br/>
+      <br/>
+      Los clientes no usarán los índices para crear trabajos derivados, incluyendo pero sin limitación, cualquier índice, estrategias de inversión y/o servicios financieros basados en dichos índices.
+      <br/>
+      <br/>
+      No podrán ser sujetos de ningún daño o responsabilidad por cualquier error, omisión, interrupción o atraso en los valores de los índices. Todos los valores de los índices y sus componentes son entregados de manera tal que se entienda que no hay garantía y el uso es a riesgo del cliente.
+      <br/>
+      <br/>
+      En ningún caso y bajo ninguna circunstancia, S&amp;P, sus afiliados  y sus licenciantes serán responsables por ninguna daño directo, indirecto, accidental, punitivo o como consecuencia, incluyendo pero no limitado a; pérdidas de ganancias, pérdidas comerciales o pérdida de tiempo, incluso en el caso de que fueran avisados de la posibilidad de dichos daños en el contrato.
+      <br/>
+      <br/>
+      S&amp;P, sus afiliados o licenciantes no serán responsables de ninguna reclamación contra el titular de una licencia o un cliente de un titular de una licencia que sea realizada por una tercera persona.
+      <br/>
+      <br/>
+      En ningún evento podrá la responsabilidad de S&amp;P, sus afiliados o sus licenciantes, sin importar la forma de actuación, exceder los montos pagados por el titular de una licencia a S&amp;P en el año dicha responsabilidad supuestamente tuvo lugar.
+      <br/>
+      <br/>
+      Cualquier acción, sin importar la forma, fruto del presente contrato, podrá ser interpuesta por el titular de una licencia más de un año después de que los hechos tuvieron lugar.
+     </div>
+     <div class="modal-footer">
+      <button class="btn btn-secondary" data-dismiss="modal" type="button">
+       Aceptar
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<script charset="utf-8" type="text/javascript">
+ $(document).ready(function(ef){
+    push.setColors({
+        green: {
+            color:"#448465",
+            background: ""
+        },
+        red: {
+            color: "#CC0033",
+            background: ""
+        },
+        igual: {
+            color: "#333D47",
+            background: ""
+        },
+        backGreen: {
+            color: "#FFF",
+            background: "#448465"
+        },
+        backRed: {
+            color: "#FFF",
+            background: "#CC0033"
+        },
+        backYellow: {
+            color: "#FFF",
+            background: "#D5952D"
+        }
+    });
+    if (_mercado != 'chile'){
+        push.setTopflopColors({
+            red: "var red",
+            green: "var green",
+            igual: "var gray",
+            backRed: "var pos-back-var",
+            backGreen: "var neg-back-var",
+            backIgual: "var no-back-var"
+        });
+    }
+});
+</script>
+
+None
