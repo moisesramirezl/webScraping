@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from getProxies import getRandomProxy
 from randomHeaders import randomHeader
 from logger import Logger
+import smtplib, ssl
 
 class Trade(object):
     def __init__(self, nemo, lastPrice, dateLastPrice, hourLastPrice):
@@ -46,9 +47,27 @@ for trade in mainTradesNemoDiv:
     hourLastPrice.text.strip()))
   itemCount+=1
 
+
+#email config
+port = 465  # For SSL
+smtp_server = "smtp.gmail.com"
+sender_email = "tradeappalert@gmail.com"
+receiver_email = "source.moises@gmail.com"
+password = "tradeapppass1"
+message = """\
+Subject: trade alert
+
+Compra."""
+
+context = ssl.create_default_context()
+
+
+
 for trade in mainTrades:
   if(trade.nemo == "LTM"):
     if(trade.lastPrice < '900'):
-      print ("Compra, precio = " + str(trade.lastPrice))
+      with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)
     else:
       print ("Aun no, precio = " + str(trade.lastPrice))
