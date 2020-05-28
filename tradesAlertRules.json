@@ -1,15 +1,3 @@
-# webScraping
-
-## Usage
-
-### start email server
-```bash
-sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
-```
-
-### configure alert rules
-
-```
 {
   "rules": [
     {
@@ -25,9 +13,3 @@ sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
   ],
   "mailto": "source.moises@gmail.com"
 }
-```
-### configure alert rules
-
-```
-python3 main.py
-```
