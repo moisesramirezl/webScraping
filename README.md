@@ -7,6 +7,12 @@
 sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
 ```
 
+### installing dependencies
+```bash
+pip install -r requirements.txt
+```
+
+
 ### configure alert rules
 
 ```
