@@ -36,5 +36,5 @@ pip install -r requirements.txt
 #### p: 1 use proxy, 0 not use proxy. Default 0
 #### v: 1 verbose, 0 not verbose. Default 0
 ```
-test.py -p 1|0 -v 1|0
+python3 main.py -p 1|0 -v 1|0
 ```
