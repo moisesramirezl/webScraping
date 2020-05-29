@@ -1,7 +1,7 @@
 #http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile
 import requests
 from bs4 import BeautifulSoup 
-from getProxies import getRandomProxy
+from getProxies import getFirstAliveProxy
 from randomHeaders import randomHeader
 from readConfig import getAlertRules
 from logger import Logger
@@ -37,8 +37,8 @@ def fetchPageContent(useProxy):
   headers = randomHeader(Logger)
   print ("visiting: " + url)  
   print ("header: " + str(headers))
-  if(useProxy == 1):
-      proxy = getRandomProxy()
+  if(useProxy == "1"):
+      proxy = getFirstAliveProxy()
       print ("proxy: " + str(proxy))
       result = requests.get(url, headers=headers, proxies={"http": proxy, "https": proxy}, verify=True,  timeout=30)
   else:
