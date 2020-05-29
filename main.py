@@ -16,9 +16,7 @@ class Trade(object):
 
 mainTrades = []
 
-def main(argv):
-  useProxy = 0
-  verbose = 0
+def getArgs(argv):
   try:
       opts, args = getopt.getopt(argv,"hp:v:",["proxy=","verbose="])
   except getopt.GetoptError:
@@ -32,27 +30,31 @@ def main(argv):
         useProxy = arg
       elif opt in ("-v", "--verbose"):
         verbose = arg
+  return useProxy, verbose
+
+def fetchPageContent(useProxy):
+  url = 'http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile'
+  headers = randomHeader(Logger)
+  print ("visiting: " + url)  
+  print ("header: " + str(headers))
+  if(useProxy == 1):
+      proxy = getRandomProxy()
+      print ("proxy: " + str(proxy))
+      result = requests.get(url, headers=headers, proxies={"http": proxy, "https": proxy}, verify=True,  timeout=30)
+  else:
+    result = requests.get(url, headers=headers, verify=True,  timeout=30)
+  return result.content
+
+def main(argv):
+  useProxy = 0
+  verbose = 0
+  
+  (useProxy, verbose) = getArgs(argv)
+
   print ('useProxy "', useProxy)
   print ('verbose "', verbose)
 
-  url = 'http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile'
-        
-
-  headers = randomHeader(Logger)
-
-
-  print ("visiting: " + url)  
-  print ("header: " + str(headers))
-
-
-  if(useProxy == 1):
-    proxy = getRandomProxy()
-    print ("proxy: " + str(proxy))
-    result = requests.get(url, headers=headers, proxies={"http": proxy, "https": proxy}, verify=True,  timeout=30)
-  else:
-    result = requests.get(url, headers=headers, verify=True,  timeout=30)
-
-  soup = BeautifulSoup(result.content, 'html.parser')
+  soup = BeautifulSoup(fetchPageContent(useProxy), 'html.parser')
 
   mainTradesNemoDiv = soup.findAll("span", {"class": "clsConstituyentes"})
   mainTradesDiv = soup.findAll("div", {"id":"blkConstituyentes"})
@@ -73,9 +75,7 @@ def main(argv):
 
 
   #email config
-
   alertConfig = getAlertRules()
-
   port = 465  # For SSL
   smtp_server = "smtp.gmail.com"
   sender_email = "tradeappalert@gmail.com"
