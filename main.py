@@ -91,7 +91,7 @@ def main(argv):
       if trade.nemo == rule['nemo']:
           print("nemo: " + trade.nemo + " lastPrice: " + trade.lastPrice + " updated: " + trade.hourLastPrice)
           #TODO cast string to int without replace
-          if(int(re.sub(r',\d\d', '', trade.lastPrice)) > rule['saleAlertPrice']):
+          if(float(re.sub(r',\d\d', '', trade.lastPrice)) > rule['saleAlertPrice']):
             #TODO extract method here
             message = """\
               Subject: trade alert for {}
@@ -101,7 +101,7 @@ def main(argv):
             with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
               server.login(sender_email, password)
               server.sendmail(sender_email, receiver_email, message)
-          if(int(re.sub(r',\d\d', '', trade.lastPrice)) < rule['purchaseAlertPrice']):
+          if(float(re.sub(r',\d\d', '', trade.lastPrice)) < rule['purchaseAlertPrice']):
             message = """\
               Subject: trade alert for {}
 
