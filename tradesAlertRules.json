@@ -2,13 +2,33 @@
   "rules": [
     {
       "nemo": "LTM",
-      "purchaseAlertPrice": 820,
-      "saleAlertPrice": 1000
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 1600
     },
     {
-      "nemo": "CTM",
-      "purchaseAlertPrice": 500,
-      "saleAlertPrice": 2000
+      "nemo": "BSANTANDER",
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 39
+    },
+    {
+      "nemo": "SECURITY",
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 163
+    },
+    {
+      "nemo": "RIPLEY",
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 280
+    },
+    {
+      "nemo": "SONDA",
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 518
+    },
+    {
+      "nemo": "CGEGAS",
+      "purchaseAlertPrice": 0,
+      "saleAlertPrice": 180
     }
   ],
   "mailto": "source.moises@gmail.com"
