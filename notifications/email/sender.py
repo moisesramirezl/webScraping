@@ -1,7 +1,9 @@
 import smtplib, ssl
 
+
 class senderConfig(object):
     pass
+
 
 def getConfig():
     config = senderConfig()
@@ -12,14 +14,23 @@ def getConfig():
     config.context = ssl.create_default_context()
     return config
 
+
 def sendEmail(trade, suggestion, mailto):
     config = getConfig()
 
     message = """\
       Subject: trade alert for {}
 
-      {}. last price: {} date: {} {} """.format(trade.nemo, suggestion, trade.lastPrice, trade.dateLastPrice, trade.hourLastPrice)
+      {}. last price: {} date: {} {} """.format(
+        trade.nemo,
+        suggestion,
+        trade.lastPrice,
+        trade.dateLastPrice,
+        trade.hourLastPrice,
+    )
     print(message)
-    with smtplib.SMTP_SSL(config.smtp_server, config.port, context=config.context) as server:
-      server.login(config.sender_email, config.password)
-      server.sendmail(config.sender_email, mailto, message)
+    with smtplib.SMTP_SSL(
+        config.smtp_server, config.port, context=config.context
+    ) as server:
+        server.login(config.sender_email, config.password)
+        server.sendmail(config.sender_email, mailto, message)
