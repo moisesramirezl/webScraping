@@ -1,7 +1,7 @@
 import requests
 
 from datasource.utils.randomHeaders import randomHeader
-from datasource.utils.getProxies import getRandomProxy
+from datasource.utils.getProxies import getFirstAliveProxy
 from domain.trade import Trade
 from utils.logger import Logger
 
@@ -14,7 +14,7 @@ def fetchPageContent(useProxy):
   print ("visiting: " + url)
   print ("header: " + str(headers))
   if(useProxy == 1):
-      proxy = getRandomProxy()
+      proxy = getFirstAliveProxy()
       print ("proxy: " + str(proxy))
       result = requests.get(url, headers=headers, proxies={"http": proxy, "https": proxy}, verify=True,  timeout=30)
   else:

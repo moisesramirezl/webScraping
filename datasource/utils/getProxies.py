@@ -1,24 +1,34 @@
 import requests
 from bs4 import BeautifulSoup 
 import random
+from lxml.html import fromstring
+from itertools import cycle
 
-def proxiesPool():
-    url = 'https://www.sslproxies.org/'
-    
-    # Retrieve the site's page. The 'with'(Python closure) is used here in order to automatically close the session when done
-    with requests.Session() as res:
-        proxies_page = res.get(url)
-        
-    # Create a BeutifulSoup object and find the table element which consists of all proxies
-    soup = BeautifulSoup(proxies_page.content, 'html.parser')
-    proxies_table = soup.find(id='proxylisttable')
-  
-    # Go through all rows in the proxies table and store them in the right format (IP:port) in our proxies list
-    proxies = []
-    for row in proxies_table.tbody.find_all('tr'):
-        proxies.append('{}:{}'.format(row.find_all('td')[0].string, row.find_all('td')[1].string))
+def getProxies():
+    url = 'https://free-proxy-list.net/'
+    response = requests.get(url)
+    parser = fromstring(response.text)
+    proxies = set()
+    for i in parser.xpath('//tbody/tr')[:10]:
+        if i.xpath('.//td[7][contains(text(),"yes")]'):
+            proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
+            proxies.add(proxy)
+    print(proxies)
     return proxies
 
-def getRandomProxy():
-  randomProxy = random.choice(proxiesPool())
-  return randomProxy
+def getFirstAliveProxy():
+    url = 'https://httpbin.org/ip'
+
+    proxies = getProxies()
+    proxyPool = cycle(proxies)
+
+    for i in range(1,11):
+        proxy = next(proxyPool)
+        print("testing proxy: " + str(proxy))
+        try:
+            response = requests.get(url,proxies={"http": proxy, "https": proxy})
+            print("is alive... ")
+            return proxy
+        except:
+            print("Skipping. Connnection error")
+    return ''
