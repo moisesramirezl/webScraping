@@ -8,11 +8,17 @@
 sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
 ```
 
+## Contrib
+
 ### installing dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
+### install git hooks
+```bash
+pre-commit install
+```
 
 ### configure alert rules
 
