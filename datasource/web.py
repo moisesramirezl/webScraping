@@ -12,10 +12,10 @@ def fetchPageContent(useProxy):
   url = 'http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile'
   headers = randomHeader(Logger)
   print ("visiting: " + url)
-  print ("header: " + str(headers))
-  if(useProxy == 1):
+  print ("using header: " + str(headers))
+  if(int(useProxy)):
       proxy = getFirstAliveProxy()
-      print ("proxy: " + str(proxy))
+      print ("using proxy: " + str(proxy))
       result = requests.get(url, headers=headers, proxies={"http": proxy, "https": proxy}, verify=True,  timeout=30)
   else:
     result = requests.get(url, headers=headers, verify=True,  timeout=30)
