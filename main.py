@@ -2,7 +2,8 @@
 from datasource.web import doScraping
 from models.trader import instantRecommendation
 from utils.readConfig import getAlertRules
-import sys, getopt
+import sys
+import getopt
 
 
 def getArgs(argv):

@@ -41,7 +41,8 @@ def doScraping(useProxy):
 
     mainTradesDiv = "<html>" + str(mainTradesDiv) + "</html>"
     soupMainTradesDiv = BeautifulSoup(mainTradesDiv, "html.parser")
-    mainTradesPriceDiv = soupMainTradesDiv.findAll("span", {"data-bind": "text: price"})
+    mainTradesPriceDiv = soupMainTradesDiv.findAll(
+        "span", {"data-bind": "text: price"})
 
     itemCount = 0
     for trade in mainTradesNemoDiv:
