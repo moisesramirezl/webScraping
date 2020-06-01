@@ -2,34 +2,24 @@
   "rules": [
     {
       "nemo": "LTM",
-      "purchaseAlertPrice": 0,
+      "purchaseAlertPrice": 800,
       "saleAlertPrice": 1600
     },
     {
-      "nemo": "BSANTANDER",
-      "purchaseAlertPrice": 0,
-      "saleAlertPrice": 39
+      "nemo": "COPEC",
+      "purchaseAlertPrice": 4700,
+      "saleAlertPrice": 4900
     },
     {
-      "nemo": "SECURITY",
-      "purchaseAlertPrice": 0,
-      "saleAlertPrice": 163
+      "nemo": "FALABELLA",
+      "purchaseAlertPrice": 1800,
+      "saleAlertPrice": 2300
     },
     {
       "nemo": "RIPLEY",
-      "purchaseAlertPrice": 0,
-      "saleAlertPrice": 280
-    },
-    {
-      "nemo": "SONDA",
-      "purchaseAlertPrice": 0,
-      "saleAlertPrice": 518
-    },
-    {
-      "nemo": "CGEGAS",
-      "purchaseAlertPrice": 0,
-      "saleAlertPrice": 180
+      "purchaseAlertPrice": 200,
+      "saleAlertPrice": 260
     }
   ],
-  "mailto": "source.moises@gmail.com"
+  "mailto": "blady.1982@gmail.com"
 }
