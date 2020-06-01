@@ -45,5 +45,6 @@ def main(argv):
     instantRecommendation(mainTrades, alertConfig)
 
 
+
 if __name__ == "__main__":
     main(sys.argv[1:])
