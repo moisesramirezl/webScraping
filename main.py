@@ -2,6 +2,7 @@
 from datasource.web import doScraping
 from models.trader import instantRecommendation
 from utils.readConfig import getAlertRules
+from persistence.nemos import init_db_context, create
 import sys
 import getopt
 
@@ -30,6 +31,13 @@ def getArgs(argv):
     return useProxy, verbose
 
 
+def saveToDatabase(mainTrades):
+    for trade in mainTrades:
+        data = {'nemo': trade.nemo, 'lastPrice': trade.lastPrice}
+        nemoCreated = create(data)
+        print("Nemo saved in db")
+
+
 def main(argv):
 
     # read input params
@@ -44,6 +52,11 @@ def main(argv):
     # evaluate at real time based in the local config vs the market
     instantRecommendation(mainTrades, alertConfig)
 
+    # the ORM needs to give app context to run
+    init_db_context()
+
+    # save nemo data to historical database for analysis
+    saveToDatabase(mainTrades)
 
 
 if __name__ == "__main__":

@@ -22,6 +22,8 @@ pre-commit install
 
 ### configure alert rules
 
+You need to crate a local folder .userConf/tradeAlertRules.json like this:
+
 ```
 {
   "rules": [
@@ -39,6 +41,13 @@ pre-commit install
   "mailto": "source.moises@gmail.com"
 }
 ```
+
+### create a local sqlite database for nemos
+```
+python3 persistence/nemos.py
+```
+Documentación de comandos básicos https://www.sitepoint.com/getting-started-sqlite3-basic-commands/
+
 ### execute options
 #### p: 1 use proxy, 0 not use proxy. Default 0
 #### v: 1 verbose, 0 not verbose. Default 0
