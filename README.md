@@ -8,6 +8,46 @@
 sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
 ```
 
+### Config a database
+
+You have 2 options for local development
+
+#### Sqlite database
+```bash
+rm persistence/site.db && python persistence/nemos.py
+```
+
+#### Cloud database using a local proxy
+Go to you config.py file and un uncomment this 4 lines
+
+```
+#LOCAL_SQLALCHEMY_DATABASE_URI = (
+#    'mysql+pymysql://{user}:{password}@localhost/{database}').format(
+#        user=CLOUDSQL_USER, password=CLOUDSQL_PASSWORD,
+#        database=CLOUDSQL_DATABASE)
+```
+
+Install the Cloud SQL Proxy
+
+###### Linux 64
+* wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+* chmod +x cloud_sql_proxy
+
+###### Mac 64
+* curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
+* chmod +x cloud_sql_proxy
+
+##### Others
+
+* go to https://cloud.google.com/python/django/appengine?hl=es-419#installingthecloudsqlproxy
+
+
+And run mysql proxy to GCP DB
+
+```bash
+cloud_sql_proxy --instances="trade-278014:southamerica-east1:historical-nemos"=tcp:3306
+```
+
 ## Contrib
 
 ### installing dependencies

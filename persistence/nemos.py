@@ -12,7 +12,7 @@ class Nemo(db.Model):
     __tablename__ = 'nemos'
 
     id = db.Column(db.Integer, primary_key=True)
-    nemo = db.Column(db.String(50), unique=True, nullable=False)
+    nemo = db.Column(db.String(50), nullable=False)
     lastPrice = db.Column(db.String(50), nullable=False, default="0.0")
     registerDateTime = db.Column(
         db.DateTime, nullable=False, default=datetime.utcnow())
