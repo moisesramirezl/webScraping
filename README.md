@@ -10,23 +10,6 @@ sudo python3 -m smtpd -c DebuggingServer -n localhost:1025
 
 ### Config a database
 
-You have 2 options for local development
-
-#### Sqlite database
-```bash
-rm persistence/site.db && python persistence/nemos.py
-```
-
-#### Cloud database using a local proxy
-Go to you config.py file and un uncomment this 4 lines
-
-```
-#LOCAL_SQLALCHEMY_DATABASE_URI = (
-#    'mysql+pymysql://{user}:{password}@localhost/{database}').format(
-#        user=CLOUDSQL_USER, password=CLOUDSQL_PASSWORD,
-#        database=CLOUDSQL_DATABASE)
-```
-
 Install the Cloud SQL Proxy
 
 ###### Linux 64
@@ -82,15 +65,15 @@ You need to crate a local folder .userConf/tradeAlertRules.json like this:
 }
 ```
 
-### create a local sqlite database for nemos
-```
-python3 persistence/nemos.py
-```
-Documentación de comandos básicos https://www.sitepoint.com/getting-started-sqlite3-basic-commands/
-
 ### execute options
-#### p: 1 use proxy, 0 not use proxy. Default 0
-#### v: 1 verbose, 0 not verbose. Default 0
+#### port: you can pass another if you want
+
 ```
-python3 main.py -p 1|0 -v 1|0
+flask run --port=8000
 ```
+
+## TO DO
+* Create a config_development.py using FLASK_ENV to credential to a dev db
+* Refactor main.py
+* Use options proxy and verbose as parameters
+* Handle multiples configurations for nemos and notification email

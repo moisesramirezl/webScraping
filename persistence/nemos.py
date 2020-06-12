@@ -2,10 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-# Configuration to the ORM
-app = Flask(__name__)
-app.config.from_pyfile('../config.py')
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 class Nemo(db.Model):
@@ -21,12 +18,6 @@ class Nemo(db.Model):
         return f"Nemo('{self.nemo}', '{self.lastPrice}', '{self.registerDateTime}')"
 
 
-# To enable de flask app (context) fron the main app (main.py)
-def init_db_context():
-    db.init_app(app)
-    app.app_context().push()
-
-
 # Translates a SQLAlchemy model instance into a dictionary
 def from_sql(row):
     data = row.__dict__.copy()
@@ -37,6 +28,8 @@ def from_sql(row):
 
 # To run first time and create database and table
 def _create_database():
+    app = Flask(__name__)
+    app.config.from_pyfile('../config.py')
     db.init_app(app)
     db.create_all()
     db.session.commit()

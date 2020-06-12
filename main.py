@@ -1,47 +1,40 @@
 # http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile
+
+import logging
+from datetime import datetime
 from datasource.web import doScraping
 from models.trader import instantRecommendation
 from utils.readConfig import getAlertRules
-from persistence.nemos import init_db_context, create
-import sys
-import getopt
+from persistence.nemos import create
+from flask import Flask
+
+app = Flask(__name__)
 
 
-def getArgs(argv):
-    useProxy = 0
-    verbose = 0
+def create_app():
+    config_filename = 'config.py'
+    app.config.from_pyfile(config_filename)
 
-    try:
-        opts, args = getopt.getopt(argv, "hp:v:", ["proxy=", "verbose="])
-    except getopt.GetoptError:
-        print("test.py -p <useProxy> -v <verbose>")
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == "-h":
-            print("test.py -p <useProxy> -v <verbose>")
-            sys.exit()
-        elif opt in ("-p", "--proxy"):
-            useProxy = arg
-        elif opt in ("-v", "--verbose"):
-            verbose = arg
+    from persistence.nemos import db
+    db.init_app(app)
 
-    print('useProxy "', useProxy)
-    print('verbose "', verbose)
-
-    return useProxy, verbose
+    return app
 
 
 def saveToDatabase(mainTrades):
     for trade in mainTrades:
-        data = {'nemo': trade.nemo, 'lastPrice': trade.lastPrice}
+        data = {
+            'nemo': trade.nemo,
+            'lastPrice': trade.lastPrice,
+            'registerDateTime': datetime.utcnow()
+        }
         nemoCreated = create(data)
         print("Nemo saved in db")
 
 
-def main(argv):
-
-    # read input params
-    (useProxy, verbose) = getArgs(argv)
+@app.route('/')
+def process():
+    useProxy = 1
 
     # nemo data from web scraping
     mainTrades = doScraping(useProxy)
@@ -52,12 +45,22 @@ def main(argv):
     # evaluate at real time based in the local config vs the market
     instantRecommendation(mainTrades, alertConfig)
 
-    # the ORM needs to give app context to run
-    init_db_context()
-
     # save nemo data to historical database for analysis
     saveToDatabase(mainTrades)
 
+    return 'Sucess'
 
-if __name__ == "__main__":
-    main(sys.argv[1:])
+
+@app.errorhandler(500)
+def server_error(e):
+    logging.exception('An error occurred during a request.')
+    return """
+    An internal error occurred: <pre>{}</pre>
+    See logs for full stacktrace.
+    """.format(e), 500
+
+
+if __name__ == '__main__':
+    # This is used when running locally. Gunicorn is used to run the
+    # application on Google App Engine. See entrypoint in app.yaml.
+    app.run(host='127.0.0.1', port=8080, debug=True)
