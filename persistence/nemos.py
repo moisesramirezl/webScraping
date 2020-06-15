@@ -27,10 +27,9 @@ def from_sql(row):
 
 
 # To run first time and create database and table
-def _create_database():
-    app = Flask(__name__)
-    app.config.from_pyfile('../config.py')
+def create_database(app):
     db.init_app(app)
+    db.drop_all()
     db.create_all()
     db.session.commit()
     print("All tables created")
@@ -68,4 +67,4 @@ def delete(id):
 
 
 if __name__ == '__main__':
-    _create_database()
+    create_database()

@@ -131,9 +131,6 @@ dmypy.json
 #user configuration
 .userConf/
 
-# local sqlite database
-persistence/site.db
-
 # local gcp proxy
 cloud_sql_proxy
 

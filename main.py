@@ -1,23 +1,21 @@
 # http://larrainvial.finmarketslive.cl/www/index.html?mercado=chile
 
 import logging
+import sys
+import traceback
 from datetime import datetime
 from datasource.web import doScraping
 from models.trader import instantRecommendation
 from utils.readConfig import getAlertRules
-from persistence.nemos import create
+from persistence.nemos import create, create_database, db
 from flask import Flask
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
+db.init_app(app)
 
 
 def create_app():
-    config_filename = 'config.py'
-    app.config.from_pyfile(config_filename)
-
-    from persistence.nemos import db
-    db.init_app(app)
-
     return app
 
 
@@ -32,7 +30,13 @@ def saveToDatabase(mainTrades):
         print("Nemo saved in db")
 
 
-@app.route('/')
+@app.route('/createdb')
+def create_tables():
+    create_database(app)
+    return 'Tables created sucessfully'
+
+
+@app.route('/process')
 def process():
     useProxy = 1
 
@@ -46,7 +50,12 @@ def process():
     instantRecommendation(mainTrades, alertConfig)
 
     # save nemo data to historical database for analysis
-    saveToDatabase(mainTrades)
+    try:
+        saveToDatabase(mainTrades)
+    except Exception as e:
+        print("Oops!", e.__class__, "occurred.")
+        print('Error saving data to db')
+        traceback.print_exc(file=sys.stdout)
 
     return 'Sucess'
 

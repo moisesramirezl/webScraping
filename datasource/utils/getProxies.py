@@ -31,7 +31,10 @@ def getFirstAliveProxy():
         print("testing proxy: " + str(proxy))
         try:
             response = requests.get(
-                url, proxies={"http": proxy, "https": proxy})
+                url,
+                proxies={"http": proxy, "https": proxy},
+                timeout=2
+            )
             print("is alive... ")
             return proxy
         except:

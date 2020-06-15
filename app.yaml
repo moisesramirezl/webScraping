@@ -1,19 +1,18 @@
 service: trades-web-scraping
-version: 1
 
 # python version 3.7
 runtime: python37
 
 # machine type
-instance_class: F1
+instance_class: F4
 
 # use gunicorn as a server
-entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -b :$PORT --timeout 150 main:app
 
 # All requests are going to be served by main
 handlers:
 - url: /.*
-  script: main.py
+  script: auto
 
-#beta_settings:
-#    cloud_sql_instances: "trade-278014:southamerica-east1:historical-nemos"
+beta_settings:
+    cloud_sql_instances: "trade-278014:southamerica-east1:historical-nemos"

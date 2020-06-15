@@ -72,8 +72,24 @@ You need to crate a local folder .userConf/tradeAlertRules.json like this:
 flask run --port=8000
 ```
 
+## Deploy to GCP
+
+### Install SDK Cloud.
+https://cloud.google.com/sdk/docs?hl=es-419
+
+#### Configure service account
+https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
+
+#### Deploy
+```bash
+gcloud app deploy
+```
+
+
 ## TO DO
+* Handle credentials with Secret Manager
 * Create a config_development.py using FLASK_ENV to credential to a dev db
 * Refactor main.py
 * Use options proxy and verbose as parameters
 * Handle multiples configurations for nemos and notification email
+* Catch exception when the request to scraping page fails

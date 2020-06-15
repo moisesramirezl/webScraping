@@ -8,8 +8,7 @@ CLOUDSQL_DATABASE = "data"
 CLOUDSQL_CONNECTION_NAME = "trade-278014:southamerica-east1:historical-nemos"
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-# To use cloud proxy to GCP
+# To use cloud proxy to GCP for local development
 LOCAL_SQLALCHEMY_DATABASE_URI = (
     'mysql+pymysql://{user}:{password}@localhost/{database}').format(
         user=CLOUDSQL_USER, password=CLOUDSQL_PASSWORD,
