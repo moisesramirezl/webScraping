@@ -87,8 +87,6 @@ gcloud app deploy
 
 
 ## TO DO
-* Handle credentials with Secret Manager
-* Create a config_development.py using FLASK_ENV to credential to a dev db
 * Refactor main.py
 * Use options proxy and verbose as parameters
 * Handle multiples configurations for nemos and notification email

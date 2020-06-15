@@ -3,7 +3,7 @@ from google.cloud import secretmanager
 
 PROJECT_ID = "1033385642776"
 DATA_BACKEND = "cloudsql"
-CLOUDSQL_DATABASE = "data"
+CLOUDSQL_DATABASE = ""
 CLOUDSQL_CONNECTION_NAME = "trade-278014:southamerica-east1:historical-nemos"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -14,6 +14,11 @@ CLOUDSQL_USER = secrets.access_secret_version(
 CLOUDSQL_PASSWORD = secrets.access_secret_version(
     "projects/"+PROJECT_ID+"/secrets/trade-web-scraping-db-user-password/versions/1").payload.data.decode("utf-8")
 
+
+if os.environ.get('GAE_INSTANCE'):
+    CLOUDSQL_DATABASE = "data"
+else:
+    CLOUDSQL_DATABASE = "dev_data"
 
 # To use cloud proxy to GCP for local development
 LOCAL_SQLALCHEMY_DATABASE_URI = (
