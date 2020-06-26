@@ -9,23 +9,25 @@ def instantRecommendation(mainTrades, alertConfig):
         print("searching trade info for nemo:  " + str(rule["nemo"]))
         for trade in mainTrades:
             if trade.nemo == rule["nemo"]:
+                # TODO cast string to int without replace
+                lastPrice = float(re.sub(r",\d\d", "", trade.lastPrice))
+                salePrice = float(rule["saleAlertPrice"])
+                purchasePrice = float(rule["purchaseAlertPrice"])
                 print(
                     "nemo: "
                     + trade.nemo
                     + " lastPrice: "
-                    + trade.lastPrice
+                    + str(lastPrice)
+                    + " salePrice: "
+                    + str(salePrice)
+                    + " purchasePrice: "
+                    + str(purchasePrice)
                     + " updated: "
                     + trade.hourLastPrice
                 )
-                # TODO cast string to int without replace
-                if (
-                    float(re.sub(r",\d\d", "", trade.lastPrice))
-                    > rule["saleAlertPrice"]
-                ):
+
+                if (lastPrice > salePrice):
                     sendEmail(trade, "Vende", alertConfig["mailto"])
-                if (
-                    float(re.sub(r",\d\d", "", trade.lastPrice))
-                    < rule["purchaseAlertPrice"]
-                ):
+                if (lastPrice < purchasePrice):
                     sendEmail(trade, "Compra", alertConfig["mailto"])
                 break
